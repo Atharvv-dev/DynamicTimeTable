@@ -17,3 +17,7 @@ Perfect for schools, students, or educators to create flexible schedules.
 - 💡 Uses random shuffling to distribute subjects
 - 🖼️ Clean and responsive UI with Bootstrap
 - 🛠️ Fully validated form inputs
+
+
+ 
+ - NOTE : I have created this project in .Net Framework 9.0  so please updagrade . otherwise Scripts and Design will not work and you've to remove "app.MapStaticAssets();" this from the  program.cs file 
