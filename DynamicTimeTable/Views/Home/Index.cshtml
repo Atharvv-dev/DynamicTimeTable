@@ -1,0 +1,43 @@
+﻿@model DynamicTimeTable.Models.TimetableInputModel
+
+@{
+    ViewData["Title"] = "Timetable Setup";
+}
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 shadow p-4 rounded bg-white">
+            <h2 class="text-center text-primary mb-4 fw-bold">Setup Timetable</h2>
+
+            <form asp-action="Index" method="post">
+                <div class="mb-3">
+                    <label asp-for="WorkingDays" class="form-label fw-semibold">Number of Working Days</label>
+                    <input asp-for="WorkingDays" class="form-control" placeholder="e.g. 5" />
+                    <span asp-validation-for="WorkingDays" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="SubjectsPerDay" class="form-label fw-semibold">Subjects per Day</label>
+                    <input asp-for="SubjectsPerDay" class="form-control" placeholder="e.g. 4" />
+                    <span asp-validation-for="SubjectsPerDay" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="TotalSubjects" class="form-label fw-semibold">Total Subjects</label>
+                    <input asp-for="TotalSubjects" class="form-control" placeholder="e.g. 6" />
+                    <span asp-validation-for="TotalSubjects" class="text-danger small"></span>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary w-100 fw-semibold">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

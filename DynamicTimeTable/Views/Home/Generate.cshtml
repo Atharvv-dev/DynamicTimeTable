@@ -1,0 +1,36 @@
+﻿@model DynamicTimeTable.Models.FinalTimetableViewModel
+
+@{
+    ViewData["Title"] = "Generated Timetable";
+}
+
+<div class="container my-4">
+    <div class="text-center mb-4">
+        <h2 class="fw-bold text-primary">Your Weekly Timetable</h2>
+        <p class="text-muted">Below is the dynamically generated timetable based on your inputs.</p>
+    </div>
+
+    <div class="table-responsive shadow-sm">
+        <table class="table table-bordered table-striped text-center align-middle">
+            <thead class="table-primary">
+                <tr>
+                    @for (int c = 0; c < Model.Columns; c++)
+                    {
+                        <th scope="col">Day @((c + 1))</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @for (int r = 0; r < Model.Rows; r++)
+                {
+                    <tr>
+                        @for (int c = 0; c < Model.Columns; c++)
+                        {
+                            <td>@Model.TimetableGrid[r, c]</td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

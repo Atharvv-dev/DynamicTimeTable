@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DynamicTimeTable</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DynamicTimeTable.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <!-- Header Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold text-white" asp-area="" asp-controller="Home" asp-action="Index">
+                    DynamicTimeTable
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container mt-4">
+        <main role="main" class="pb-4">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light border-top text-muted text-center small" style="padding: 8px 0;">
+        <div class="container">
+            &copy; 2025 - DynamicTimeTable | Developed by <strong>Atharv Pandit</strong>             
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
